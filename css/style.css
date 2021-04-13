@@ -1,0 +1,485 @@
+:root {
+    --primary-color : #F16822;
+    --text-color : #333333;
+    --circle-color :#EEEEEE;
+    --white : #FFFFFF;
+    --grey:#F9F9F9;
+    --footercolor: #CCCCCC;
+    --tag:#444444;
+    --logo:#707070;
+}
+.container{
+    width:100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* Points de rupture de BootStrap : 0 <= X-small < 576 <= small < 768 <= medium < 992 <= large < 1200 <= X-large < 1400 <= XX-large 
+
+Dans notre cas, XX-large ne sera pas utilisé 
+Largeur du container dans les différents cas
+^
+X-large : container = 1280px 
+^
+large : container = 1080px
+^
+medium : container = 872px
+^
+small : container = 648px
+^
+x-small : container = 100%
+*/
+/* for responsive version */
+
+@media screen and (min-width: 36em) { /* 36em = 36 * 16 (base navigateur) = 576px */
+	.container {
+		max-width: 64.8rem;
+	}
+}
+
+@media screen and (min-width: 48em) { /* 872px */
+	.container {
+		max-width: 86.2rem;
+	}
+}
+
+@media screen and (min-width: 62em) { /* 1080px */
+	.container {
+		max-width: 108rem;
+	}
+}
+
+@media screen and (min-width: 75em) { /* 1280px */
+	.container {
+		max-width: 128rem;
+	}
+}
+
+
+/*  basic layout of website */
+
+body{
+    text-align: center;
+    font-family: 'railway',sans-serif;
+}
+ul li {
+    list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+h2{
+    font-size: 4.8rem;
+    padding-top: 17.0rem;
+}
+@media screen and (min-width:48em){
+    h2{
+        font-size: 4.5rem;
+    }
+}
+h3{
+    font-size:2.4rem;
+}
+@media screen and (min-width:62em){
+    h3{
+        font-size: 2.1rem;
+    }
+}
+p{
+    font-size: 2.4rem;
+}
+/* buttons to give style under each heading */
+.design-btn{
+    display: inline-flex;
+}
+
+.btn-1{
+    height: 1rem;
+    width: 1rem;
+    background-color: var(--primary-color);
+}
+.btn-2{
+    height: 1rem;
+    width: 1rem;
+    background-color: var(--text-color);
+    margin-left: 0.3em;
+}
+.btn-3{
+    height: 1rem;
+    width: 1rem;
+    background-color: var(--white);
+    margin-left: 0.3em;
+}
+
+/* start of header */
+a:link {
+    text-decoration: none;
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.main-menu a {
+    padding:1.8rem;   
+}
+.menu-link {
+    color: var(--text-color);
+    font-family: "Montserrat" , sans-serif;
+    font-size: 1.4rem;
+    display: block;
+}
+.main-menu .menu-link:hover , 
+.main-menu .menu-link:focus{
+    background-color: var(--primary-color);
+    transition: 0.5s;
+    border: 1px dotted red;
+}
+.text-with-logo {
+    padding-left: 0.625em;
+    text-align: left;
+    font-size: 2.0rem;
+    color:var(--logo)
+}
+.breaked-text{
+    font-size: 1.4rem;
+}
+/* start of burger menu for mobile version */
+
+[hidden] {
+	display: none;
+}
+.toggle-menu {
+	background-color: transparent;
+	padding: 1.5rem;
+	border: 0;
+	color:var(--primary-color);
+}
+.menu:not([hidden]){
+    display: block;
+    transform: translateX(0);
+}
+@media screen and (min-width: 36.99em) {
+	.toggle-menu {
+		display: none;
+	}
+	#menu {
+		display: flex;
+		position: static;
+	}
+}
+  
+
+/* slogan of company / Main layout */
+
+.moto-ubiquity{
+    background-image: url(../images/slider1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;  
+    min-height: 96rem;
+}
+.slogan{
+    color:var(--primary-color );
+    font-size: 6.4rem;
+}
+@media screen and (min-width:36em){
+    .slogan {
+        font-size: 5.4rem;
+      }
+    
+}
+.company-slogan{
+    padding-top: 40.3rem;
+}
+.company-slogan p{
+    font-family: "Montserrat" , sans-serif;
+  
+}
+/* services section */
+
+.service-description p{
+    font-family: "Montserrat" , sans-serif;
+    padding-bottom: 3.063rem;
+
+}
+.services-with-icon{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr)
+}
+.services-with-icon {
+    padding-bottom: 10.625rem;
+}
+.services-with-icon p{
+    font-family: "Montserrat" , sans-serif;
+    font-size: 1.6rem;
+}
+@media screen and (min-width:62em){
+    .services-with-icon {
+      
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .services-with-icon p {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+      }
+}
+.circle{
+    background-color: var(--circle-color);
+    height: 7.813rem;
+    max-width:7.813rem;
+    border-radius: 2.25em;
+    margin: auto;
+}
+.circle img{
+    padding:1.25em ;
+
+}
+.service-heading {
+    padding: 0.52em;
+}
+/* about ubiquity company */
+
+.about-ubiquity {
+  background-image: url(../images/bokehback.png);
+  background-position:cover ;
+  background-repeat: no-repeat;
+  min-height: 57.063rem;
+}
+.about-company{
+    color:var(--primary-color );
+}
+.about-company-text{
+    color: var(--circle-color);
+    font-family: "Montserrat" , sans-serif;
+    padding-bottom: 14.4rem;
+}
+
+/* latests posts */
+
+
+.lastest-posts{
+    background-color: var(--grey);
+    min-height: 120.438rem;
+}
+.lastest-post-heading p{
+    font-family: "Montserrat" , sans-serif;
+    padding-bottom: 7.188rem;
+
+}
+.blogs ul{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+}
+
+.blogs h3{
+    color: var(--primary-color);
+    margin-bottom: 0.55em;
+    font-size: 4.0rem;
+ text-align: center;
+    padding-top: 4.9rem;
+}
+.blog-text{
+    padding-left: 0rem;
+    padding-right: 0rem ;
+    padding-bottom: 2.813rem;
+    line-height: 1.5em;
+}
+.under-blog li{
+    max-width:25rem;
+    margin-bottom: 6.25rem;
+    background-color: var(--white);
+    justify-self: center;
+}
+@media screen and (min-width:62em){
+
+    .under-blog li{
+        max-width:35rem;
+    }
+    .blogs ul {
+        grid-template-columns: repeat(3,1fr);
+      }
+      .under-blog li {
+        max-width: 40rem;
+      }
+      .blog-text{
+        padding-left: 2.813rem;
+        padding-right: 2.813rem ;
+    }
+}
+@media screen and (min-width:48em){
+
+    .under-blog li{
+        max-width:27rem;
+    }
+    .blogs h3{
+        font-size: 3.5rem;
+    }
+}
+
+.under-blog img{
+     padding-top: 1.563rem;
+     padding-left: 1.563rem;
+     padding-right: 1.563rem;
+}
+
+/* fun facts */
+
+.fun-facts{
+    background-image: url(../images/fun-facts-bg.png);
+    height:100%;
+    min-height: 40.125rem;
+    background-size:cover;
+}
+.background-opacity{
+    background-color: var(--white) ;
+    min-height:inherit;
+    opacity: 0.8;
+    z-index: -1;
+}
+.fun-facts-heading{
+    opacity: 100%;
+    z-index: 1;
+}
+.fun-facts-number{
+    color: var(--primary-color);
+    font-size: 6.4rem;
+    font-weight: bold;
+    font-family: "Montserrat" , sans-serif;
+}
+
+.fun-facts-descryption{
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   align-items: center;
+   padding-bottom: 17.0rem;
+
+}
+
+@media screen and (min-width:48em){
+    .fun-facts-descryption{
+    grid-template-columns: repeat(3, 1fr);  
+     }
+     .fun-facts-number{
+        font-size: 5.4rem;
+    } 
+}
+@media screen and (min-width:62em){
+    .fun-facts-descryption {
+        
+     grid-template-columns: repeat(6, 1fr);
+      }  
+
+}
+
+.fun-facts-descryption h3{
+    text-transform: uppercase;
+    font-family: "Montserrat" , sans-serif;
+}
+
+/* information about owner */
+
+.owner-info{
+    background-image: url(../images/rect.png);
+    background-repeat: no-repeat;
+    min-height: 60rem;
+    
+}
+.owner-info .container {
+    display: flex;
+    
+}
+.owner-info img{
+    border-radius: 50%;
+    margin-top: 17.0rem;
+}
+.owner-name{
+    color: var(--white);
+    text-align: left;
+    font-size: 3rem;
+    padding-top: 18.0rem;
+}
+.owner-description{
+    color: var(--circle-color );
+    text-align: left;
+    font-family: "Montserrat" , sans-serif;
+}
+
+/* footer */
+.footer-section{
+    background-color: var(--text-color);
+    color:var(--footercolor);
+
+}
+
+.all-tags {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    text-align: left;
+    padding-bottom: 12.938rem;
+    padding-top: 6.875rem;
+   align-items: center;
+}
+@media screen and (min-width:62em){
+    .all-tags {
+        grid-template-columns: repeat(4,1fr);
+      }
+}
+
+.all-tags h3{
+    padding-bottom: 1em;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+.all-tags-name {
+    font-size: 0.75rem;
+    font-family: "Montserrat" , sans-serif;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1em;
+    align-self: center;
+}
+.all-tags-name a{
+    color:var(--footercolor);
+}
+.tags-name{
+    background-color: var(--tag);
+    padding:0.7em;
+    gap:1em;
+}
+.social-media{
+    display: flex;
+    justify-content: space-between;
+    font-family: "Montserrat" , sans-serif;
+    font-size: 1.5rem;
+    padding-bottom: 2.063rem;
+    padding-top: 1.875rem;
+
+}
+.social-media ul{
+    display: flex;
+}
+.bullets{
+    display:flex;
+    font-size: 1.25rem;
+    font-family: "Montserrat" , sans-serif;
+    line-height: 2.05rem;
+}
+.bullets li{
+    margin-left: 0.9em;
+}
+.bullets a{
+    color:var(--footercolor);
+}
+.social-media-logos li{
+    margin-right: 0.9em;
+}
+
+
+ 
+  
+ 
+  
+  
+  
+  
+  
